@@ -1,0 +1,1 @@
+json.partial! "goalies/goaly", goaly: @goaly

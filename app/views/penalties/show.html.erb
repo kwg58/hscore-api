@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Period:</strong>
+  <%= @penalty.period %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @penalty.time %>
+</p>
+
+<p>
+  <strong>References:</strong>
+  <%= @penalty.references %>
+</p>
+
+<p>
+  <strong>Player:</strong>
+  <%= @penalty.player %>
+</p>
+
+<p>
+  <strong>References:</strong>
+  <%= @penalty.references %>
+</p>
+
+<%= link_to 'Edit', edit_penalty_path(@penalty) %> |
+<%= link_to 'Back', penalties_path %>

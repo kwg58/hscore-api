@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2016-08-06
+  time: 2016-08-06 14:23:41
+  location: MyString
+  periodlength: 1
+
+two:
+  date: 2016-08-06
+  time: 2016-08-06 14:23:41
+  location: MyString
+  periodlength: 1

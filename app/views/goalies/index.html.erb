@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Goalies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Time played</th>
+      <th>Goals against</th>
+      <th>References</th>
+      <th>References</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @goalies.each do |goaly| %>
+      <tr>
+        <td><%= goaly.time_played %></td>
+        <td><%= goaly.goals_against %></td>
+        <td><%= goaly.references %></td>
+        <td><%= goaly.references %></td>
+        <td><%= link_to 'Show', goaly %></td>
+        <td><%= link_to 'Edit', edit_goaly_path(goaly) %></td>
+        <td><%= link_to 'Destroy', goaly, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Goaly', new_goaly_path %>

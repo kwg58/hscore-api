@@ -1,0 +1,2 @@
+class Infraction < ApplicationRecord
+end

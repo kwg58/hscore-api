@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  period: 1
+  time: 2016-08-06 14:24:42
+  references: MyString
+  player: MyString
+  references: 
+
+two:
+  period: 1
+  time: 2016-08-06 14:24:42
+  references: MyString
+  player: MyString
+  references: 

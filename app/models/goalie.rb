@@ -1,0 +1,2 @@
+class Goalie < ApplicationRecord
+end

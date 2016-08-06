@@ -1,0 +1,1 @@
+json.array! @goalies, partial: 'goalies/goaly', as: :goaly

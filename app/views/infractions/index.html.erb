@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Infractions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Infraction</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @infractions.each do |infraction| %>
+      <tr>
+        <td><%= infraction.infraction %></td>
+        <td><%= link_to 'Show', infraction %></td>
+        <td><%= link_to 'Edit', edit_infraction_path(infraction) %></td>
+        <td><%= link_to 'Destroy', infraction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Infraction', new_infraction_path %>

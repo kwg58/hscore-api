@@ -1,0 +1,22 @@
+<%= form_for(infraction) do |f| %>
+  <% if infraction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(infraction.errors.count, "error") %> prohibited this infraction from being saved:</h2>
+
+      <ul>
+      <% infraction.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :infraction %>
+    <%= f.text_field :infraction %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
