@@ -6,16 +6,24 @@ class Game < ApplicationRecord
   has_many :goalies
   # accepts_nested_attributes_for :teams, :goals, :assists, :pentalties, :goalies
 
-  def hometeam( hometeam_id )
-    return Team.find(self.hometeam_id)
+  def homefull()
+    homef = Team.find(self.hometeam_id)
+    return homef.fullname
   end
 
-  def awayteam( hometeam_id )
-    return Team.find(self.awayteam_id)
+  def homeshort()
+    homes = Team.find(self.hometeam_id)
+    return homes.shortname
   end
 
-  def getteam( teamID )
-    return Team.find(teamID)
+  def awayfull()
+    awayf = Team.find(self.awayteam_id)
+    return awayf.fullname
+  end
+
+  def awayshort()
+    aways = Team.find(self.awayteam_id)
+    return aways.shortname
   end
 
 end

@@ -5,7 +5,7 @@ class PlayersController < ApplicationController
   # GET /players.json
   def index
     @team = Team.find(params[:team_id])
-    @players=@team.players
+    @players=@team.players.order("jerseynumber ASC")
     # @players = Player.all
   end
 

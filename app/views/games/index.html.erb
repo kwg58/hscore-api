@@ -9,8 +9,11 @@
       <th>Time</th>
       <th>Location</th>
       <th>Status</th>
-      <th>Periodlength</th>
-      <th colspan="4"></th>
+      <th>Home</th>
+      <th>Score</th>
+      <th>Away</th>
+      <th>Score</th>
+      <th colspan="8"></th>
     </tr>
   </thead>
 
@@ -21,26 +24,10 @@
       <td><%= game.time%></td>
       <td><%= game.location %></td>
       <td><%= game.status %></td>
-      <td><%= game.periodlength %></td>
-      <td><%= game.official1 %></td>
-      <td><%= game.official2 %></td>
-      <td><%= game.official3 %></td>
-      <td><%= game.hometeam_id %></td>
-      <td><%= game.hometeam %></td>
-      <td><%= game.getteam(awayteam_id) %></td>
-      <td><%= game.homescore1 %></td>
-      <td><%= game.homescore2 %></td>
-      <td><%= game.homescore3 %></td>
-      <td><%= game.homescoreOT %></td>
+      <td><%= game.homeshort %></td>
       <td><%= game.homescorefinal %></td>
-      <td><%= game.awayscore1 %></td>
-      <td><%= game.awayscore2 %></td>
-      <td><%= game.awayscore3 %></td>
-      <td><%= game.awayscoreOT %></td>
+      <td><%= game.awayshort %></td>
       <td><%= game.awayscorefinal %></td>
-      <td><%= game.winner_id %></td>
-      <td><%= game.loser_id %></td>
-      <td><%= game.tie %></td>
       <td><%= link_to 'Show', game %></td>
       <td><%= link_to 'Edit', edit_game_path(game) %></td>
       <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
