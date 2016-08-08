@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20160807032554) do
 
   create_table "games", force: :cascade do |t|
     t.date     "date"
-    t.time     "time"
+    t.string   "time"
     t.string   "location"
     t.string   "status"
     t.integer  "periodlength"
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 20160807032554) do
     t.integer  "team_id"
     t.integer  "player_id"
     t.integer  "period"
-    t.time     "time"
+    t.string   "time"
     t.string   "situation"
     t.integer  "goalie_id"
     t.datetime "created_at", null: false
@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 20160807032554) do
   create_table "penalties", force: :cascade do |t|
     t.integer  "game_id"
     t.integer  "period"
-    t.time     "time"
+    t.string   "time"
     t.integer  "player_id"
     t.integer  "infraction"
     t.integer  "duration"
