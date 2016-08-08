@@ -9,7 +9,6 @@ class CreateGoals < ActiveRecord::Migration[5.0]
       t.time :time
       t.string :situation
       t.integer :goalie
-      t.game :references
 
 
       t.timestamps

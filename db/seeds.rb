@@ -5,4 +5,49 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-load "#{Rails.root}/db/seeds/seed_penalties_and_teams.rb
+# load "#{Rails.root}/db/seeds/seed_penalties_and_teams.rb
+
+Infraction.create!([
+  { infraction: 'Bench penalty'},
+  { infraction: 'Boarding'},
+  { infraction: 'Butt-ending'},
+  { infraction: 'Charging'},
+  { infraction: 'Check to the Head'},
+  { infraction: 'Checking from behind'},
+  { infraction: 'Clipping'},
+  { infraction: 'Closing hand on puck'},
+  { infraction: 'Cross-checking'},
+  { infraction: 'GK crossing the red line'},
+  { infraction: 'Delay of game'},
+  { infraction: 'Diving'},
+  { infraction: 'Elbowing'},
+  { infraction: 'Fighting'},
+  { infraction: 'Head-butting'},
+  { infraction: 'High-sticking'},
+  { infraction: 'Holding'},
+  { infraction: 'Hooking'},
+  { infraction: 'Illegal equipment'},
+  { infraction: 'Illegal stick'},
+  { infraction: 'Instigator'},
+  { infraction: 'Interference'},
+  { infraction: 'Kneeing'},
+  { infraction: 'Leaving penalty bench too early'},
+  { infraction: 'GK leaving the crease'},
+  { infraction: 'Roughing'},
+  { infraction: 'Slashing'},
+  { infraction: 'Spearing'},
+  { infraction: 'GK throwing puck'},
+  { infraction: 'Throwing stick'},
+  { infraction: 'Too many men on the ice'},
+  { infraction: 'Tripping'},
+  { infraction: 'Unsportsmanlike conduct'}
+]);
+
+  Team.create! ([
+  { fullname: 'Chicago Blackhawks', shortname: 'Hawks'},
+  { fullname: 'Boston Bruins', shortname: 'Bruins'},
+  { fullname: 'Detroit Red Wings', shortname: 'Wings'},
+  { fullname: 'New York Rangers', shortname: 'Rangers'},
+  { fullname: 'Toronto Maple Leafs', shortname: 'Leafs'},
+  { fullname: 'Montreal Canadiens', shortname: 'Habs'}
+]);

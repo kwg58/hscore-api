@@ -32,7 +32,7 @@ Infraction.create!([
   { infraction: 'Too many men on the ice'},
   { infraction: 'Tripping'},
   { infraction: 'Unsportsmanlike conduct'}
-  ])
+  ]);
 
   Team.create! ([
     fullname: 'Chicago Blackhawks', shortname: 'Hawks'},
@@ -41,4 +41,4 @@ Infraction.create!([
     fullname: 'New York Rangers', shortname: 'Rangers'},
     fullname: 'Toronto Maple Leafs', shortname: 'Leafs'},
     fullname: 'Montreal Canadiens', shortname: 'Habs'}
-    ])
+    ]);

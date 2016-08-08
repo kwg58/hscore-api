@@ -4,8 +4,8 @@ class CreateGames < ActiveRecord::Migration[5.0]
       t.date :date
       t.time :time
       t.string :location
+      t.string :status
       t.integer :periodlength
-      t.status :string
       t.string :official1
       t.string :official2
       t.string :official3

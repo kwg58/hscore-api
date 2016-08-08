@@ -6,8 +6,7 @@ class CreatePlayers < ActiveRecord::Migration[5.0]
       t.string :fullname
       t.string :phone
       t.string :email
-      t.integer :number
-      t.team :references
+      t.integer :jerseynumber
 
       t.timestamps
     end
