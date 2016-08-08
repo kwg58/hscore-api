@@ -5,23 +5,27 @@
 <table>
   <thead>
     <tr>
+      <th>Game</th>
+      <th>Player</th>
       <th>Period</th>
       <th>Time</th>
-      <th>References</th>
-      <th>Player</th>
-      <th>References</th>
-      <th colspan="3"></th>
+      <th>Infraction</th>
+      <th>Duration</th>
+      <th>Shorthanded</th>
+      <th colspan="7"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @penalties.each do |penalty| %>
       <tr>
+        <td><%= penalty.game_id %></td>
+        <td><%= penalty.player_id %></td>
         <td><%= penalty.period %></td>
         <td><%= penalty.time %></td>
-        <td><%= penalty.references %></td>
-        <td><%= penalty.player %></td>
-        <td><%= penalty.references %></td>
+        <td><%= penalty.infraction %></td>
+        <td><%= penalty.duration %></td>
+        <td><%= penalty.shorthanded %></td>
         <td><%= link_to 'Show', penalty %></td>
         <td><%= link_to 'Edit', edit_penalty_path(penalty) %></td>
         <td><%= link_to 'Destroy', penalty, method: :delete, data: { confirm: 'Are you sure?' } %></td>

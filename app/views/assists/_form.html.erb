@@ -1,0 +1,32 @@
+<%= form_for(assist) do |f| %>
+  <% if assist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(assist.errors.count, "error") %> prohibited this assist from being saved:</h2>
+
+      <ul>
+      <% assist.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :goal_id %>
+    <%= f.number_field :goal_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :player_id %>
+    <%= f.number_field :player_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :assist_no %>
+    <%= f.number_field :assist_no %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

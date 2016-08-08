@@ -1,1 +1,1 @@
-json.partial! "goalies/goaly", goaly: @goaly
+json.partial! "goalies/goalie", goalie: @goalie

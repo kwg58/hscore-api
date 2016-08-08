@@ -1,15 +1,25 @@
-<%= form_for(goaly) do |f| %>
-  <% if goaly.errors.any? %>
+<%= form_for(goalie) do |f| %>
+  <% if goalie.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(goaly.errors.count, "error") %> prohibited this goaly from being saved:</h2>
+      <h2><%= pluralize(goalie.errors.count, "error") %> prohibited this goalie from being saved:</h2>
 
       <ul>
-      <% goaly.errors.full_messages.each do |message| %>
+      <% goalie.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
+
+  <div class="field">
+    <%= f.label :game_id %>
+    <%= f.number_field :game_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :player_id %>
+    <%= f.number_field :player_id %>
+  </div>
 
   <div class="field">
     <%= f.label :time_played %>
@@ -22,13 +32,13 @@
   </div>
 
   <div class="field">
-    <%= f.label :references %>
-    <%= f.text_field :references %>
+    <%= f.label :win %>
+    <%= f.number_field :win %>
   </div>
 
   <div class="field">
-    <%= f.label :references %>
-    <%= f.text_field :references %>
+    <%= f.label :loss %>
+    <%= f.number_field :loss %>
   </div>
 
   <div class="actions">

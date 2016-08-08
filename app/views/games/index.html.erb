@@ -8,22 +8,42 @@
       <th>Date</th>
       <th>Time</th>
       <th>Location</th>
+      <th>Status</th>
       <th>Periodlength</th>
-      <th colspan="3"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
-
+  
   <tbody>
     <% @games.each do |game| %>
-      <tr>
-        <td><%= game.date %></td>
-        <td><%= game.time %></td>
-        <td><%= game.location %></td>
-        <td><%= game.periodlength %></td>
-        <td><%= link_to 'Show', game %></td>
-        <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr>
+      <td><%= game.date %></td>
+      <td><%= game.time.strftime("%I:%M") %></td>
+      <td><%= game.location %></td>
+      <td><%= game.status %></td>
+      <td><%= game.periodlength %></td>
+      <td><%= game.official1 %></td>
+      <td><%= game.official2 %></td>
+      <td><%= game.official3 %></td>
+      <td><%= game.hometeam_id %></td>
+      <td><%= game.awayteam_id %></td>
+      <td><%= game.homescore1 %></td>
+      <td><%= game.homescore2 %></td>
+      <td><%= game.homescore3 %></td>
+      <td><%= game.homescoreOT %></td>
+      <td><%= game.homescorefinal %></td>
+      <td><%= game.awayscore1 %></td>
+      <td><%= game.awayscore2 %></td>
+      <td><%= game.awayscore3 %></td>
+      <td><%= game.awayscoreOT %></td>
+      <td><%= game.awayscorefinal %></td>
+      <td><%= game.winner_id %></td>
+      <td><%= game.loser_id %></td>
+      <td><%= game.tie %></td>
+      <td><%= link_to 'Show', game %></td>
+      <td><%= link_to 'Edit', edit_game_path(game) %></td>
+      <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>

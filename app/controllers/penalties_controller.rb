@@ -69,6 +69,6 @@ class PenaltiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def penalty_params
-      params.require(:penalty).permit(:period, :time, :references, :player, :references)
+      params.require(:penalty).permit(:game_id, :player_id, :period, :time, :infraction, :duration, :shorthanded)
     end
 end

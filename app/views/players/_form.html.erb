@@ -22,9 +22,21 @@
   </div>
 
   <div class="field">
-    <%= f.label :references %>
-    <%= f.text_field :references %>
+    <%= f.label :fullname %>
+    <%= f.text_field :fullname %>
   </div>
+
+  <div class="field">
+    <%= f.label :team_id %>
+    <%= f.number_field :team_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :jerseynumber %>
+    <%= f.number_field :jerseynumber %>
+  </div>
+
+
 
   <div class="actions">
     <%= f.submit %>

@@ -16,9 +16,47 @@
 </p>
 
 <p>
+  <strong>Status:</strong>
+  <%= @game.status %>
+</p>
+
+<p>
   <strong>Periodlength:</strong>
   <%= @game.periodlength %>
 </p>
+
+<p>
+  <strong>Officials:</strong><br />
+  <%= @game.official1 %><br />
+  <%= @game.official2 %><br />
+  <%= @game.official3 %><br />
+</p>
+
+<p>
+  <strong>Home Scoring:</strong><br />
+  Period 1:&emsp;<%= @game.homescore1 %><br />
+  Period 2:&emsp;<%= @game.homescore2 %><br />
+  Period 3:&emsp;<%= @game.homescore3 %><br />
+  Overtime:&emsp;<%= @game.homescoreOT %><br />
+  Final:&emsp;<%= @game.homescorefinal %><br />
+</p>
+
+<p>
+  <strong>Away Scoring:</strong><br />
+  Period 1:&emsp;<%= @game.awayscore1 %><br />
+  Period 2:&emsp;<%= @game.awayscore2 %><br />
+  Period 3:&emsp;<%= @game.awayscore3 %><br />
+  Overtime:&emsp;<%= @game.awayscoreOT %><br />
+  Final:&emsp;<%= @game.awayscorefinal %><br />
+</p>
+
+<p>
+  <strong>Results:</strong><br />
+  Winner:&emsp;<%= @game.winner_id %><br />
+  Loser:&emsp;<%= @game.loser_id %><br />
+  Tie:&emsp;<%= @game.tie %><br />
+</p>
+
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>

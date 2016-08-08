@@ -12,28 +12,38 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :game_id %>
+    <%= f.number_field :game_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :player_id %>
+    <%= f.number_field :player_id %>
+  </div>
+
+  <div class="field">
     <%= f.label :period %>
     <%= f.number_field :period %>
   </div>
 
   <div class="field">
     <%= f.label :time %>
-    <%= f.time_select :time %>
+    <%= f.string :time %>
   </div>
 
   <div class="field">
-    <%= f.label :references %>
-    <%= f.text_field :references %>
+    <%= f.label :infraction %>
+    <%= f.text_field :infraction %>
   </div>
 
   <div class="field">
-    <%= f.label :player %>
-    <%= f.text_field :player %>
+    <%= f.label :duration %>
+    <%= f.number_field :duration %>
   </div>
 
   <div class="field">
-    <%= f.label :references %>
-    <%= f.text_field :references %>
+    <%= f.label :shorthanded %>
+    <%= f.text_field :shorthanded %>
   </div>
 
   <div class="actions">

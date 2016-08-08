@@ -45,9 +45,25 @@ Infraction.create!([
 
   Team.create! ([
   { fullname: 'Chicago Blackhawks', shortname: 'Hawks'},
-  { fullname: 'Boston Bruins', shortname: 'Bruins'},
   { fullname: 'Detroit Red Wings', shortname: 'Wings'},
+  { fullname: 'Boston Bruins', shortname: 'Bruins'},
   { fullname: 'New York Rangers', shortname: 'Rangers'},
-  { fullname: 'Toronto Maple Leafs', shortname: 'Leafs'},
-  { fullname: 'Montreal Canadiens', shortname: 'Habs'}
+  { fullname: 'Montreal Canadiens', shortname: 'Habs'},
+  { fullname: 'Toronto Maple Leafs', shortname: 'Leafs'}
 ]);
+
+require 'csv'
+
+Player.delete_all
+
+CSV.foreach('db/players.csv', headers: true) do |row|
+  Player.create(
+    {
+      team_id: row['Team'],
+      firstname: row['FirstName'],
+      lastname: row['LastName'],
+      fullname: row['FullName'],
+      jerseynumber: row['Num']
+    }
+  )
+end

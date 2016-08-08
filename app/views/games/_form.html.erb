@@ -27,8 +27,23 @@
   </div>
 
   <div class="field">
+    <%= f.label :status %>
+    <%= f.text_field :status %>
+  </div>
+
+  <div class="field">
     <%= f.label :periodlength %>
     <%= f.number_field :periodlength %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hometeam_id %>
+    <%= f.text_field :hometeam_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :awayteam_id %>
+    <%= f.number_field :awayteam_id %>
   </div>
 
   <div class="actions">

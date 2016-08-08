@@ -5,24 +5,28 @@
 <table>
   <thead>
     <tr>
+      <th>Game ID</th>
+      <th>Player ID</th>
       <th>Time played</th>
       <th>Goals against</th>
-      <th>References</th>
-      <th>References</th>
-      <th colspan="3"></th>
+      <th>Win</th>
+      <th>Loss</th>
+      <th colspan="6"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @goalies.each do |goaly| %>
+    <% @goalies.each do |goalie| %>
       <tr>
-        <td><%= goaly.time_played %></td>
-        <td><%= goaly.goals_against %></td>
-        <td><%= goaly.references %></td>
-        <td><%= goaly.references %></td>
-        <td><%= link_to 'Show', goaly %></td>
-        <td><%= link_to 'Edit', edit_goaly_path(goaly) %></td>
-        <td><%= link_to 'Destroy', goaly, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= goalie.game_id %></td>
+        <td><%= goalie.player_id %></td>
+        <td><%= goalie.time_played %></td>
+        <td><%= goalie.goals_against %></td>
+        <td><%= goalie.win %></td>
+        <td><%= goalie.loss %></td>
+        <td><%= link_to 'Show', goalie %></td>
+        <td><%= link_to 'Edit', edit_goalie_path(goalie) %></td>
+        <td><%= link_to 'Destroy', goalie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Goaly', new_goaly_path %>
+<%= link_to 'New goalie', new_goalie_path %>

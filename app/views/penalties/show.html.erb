@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Game:</strong>
+  <%= @penalty.game_id %>
+</p>
+
+<p>
+  <strong>Player</strong>
+  <%= @penalty.player_id %>
+</p>
+
+<p>
   <strong>Period:</strong>
   <%= @penalty.period %>
 </p>
@@ -11,18 +21,18 @@
 </p>
 
 <p>
-  <strong>References:</strong>
-  <%= @penalty.references %>
+  <strong>Infraction:</strong>
+  <%= @penalty.infraction %>
 </p>
 
 <p>
-  <strong>Player:</strong>
-  <%= @penalty.player %>
+  <strong>Duration:</strong>
+  <%= @penalty.duration %>
 </p>
 
 <p>
-  <strong>References:</strong>
-  <%= @penalty.references %>
+  <strong>Shorthanded:</strong>
+  <%= @penalty.shorthanded %>
 </p>
 
 <%= link_to 'Edit', edit_penalty_path(@penalty) %> |

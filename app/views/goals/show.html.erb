@@ -1,6 +1,26 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Game:</strong>
+  <%= @goal.game_id %>
+</p>
+
+<p>
+  <strong>Team</strong>
+  <%= @goal.team_id %>
+</p>
+
+<p>
+  <strong>Player:</strong>
+  <%= @goal.player_id %>
+</p>
+
+<p>
+  <strong>Goalie:</strong>
+  <%= @goal.goalie_id %>
+</p>
+
+<p>
   <strong>Period:</strong>
   <%= @goal.period %>
 </p>
@@ -11,8 +31,8 @@
 </p>
 
 <p>
-  <strong>References:</strong>
-  <%= @goal.references %>
+  <strong>Situation:</strong>
+  <%= @goal.situation %>
 </p>
 
 <%= link_to 'Edit', edit_goal_path(@goal) %> |

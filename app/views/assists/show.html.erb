@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Goal:</strong>
+  <%= @assist.goal_id %>
+</p>
+
+<p>
+  <strong>Player:</strong>
+  <%= @assist.player_id %>
+</p>
+
+<p>
+  <strong>Assist no:</strong>
+  <%= @assist.assist_no %>
+</p>
+
+<%= link_to 'Edit', edit_assist_path(@assist) %> |
+<%= link_to 'Back', assists_path %>

@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160806192125) do
+ActiveRecord::Schema.define(version: 20160807032554) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "assists", force: :cascade do |t|
+    t.integer  "goal_id"
+    t.integer  "player_id"
+    t.integer  "assist_no"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "games", force: :cascade do |t|
     t.date     "date"
@@ -24,8 +32,8 @@ ActiveRecord::Schema.define(version: 20160806192125) do
     t.string   "official1"
     t.string   "official2"
     t.string   "official3"
-    t.integer  "hometeam"
-    t.integer  "awayteam"
+    t.integer  "hometeam_id"
+    t.integer  "awayteam_id"
     t.integer  "homescore1"
     t.integer  "homescore2"
     t.integer  "homescore3"
@@ -36,29 +44,32 @@ ActiveRecord::Schema.define(version: 20160806192125) do
     t.integer  "awayscore3"
     t.integer  "awayscoreOT"
     t.integer  "awayscorefinal"
-    t.integer  "winner"
-    t.integer  "loser"
+    t.integer  "winner_id"
+    t.integer  "loser_id"
     t.integer  "tie"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
 
   create_table "goalies", force: :cascade do |t|
+    t.integer  "game_id"
+    t.integer  "player_id"
     t.integer  "time_played"
     t.integer  "goals_against"
+    t.integer  "win"
+    t.integer  "loss"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
 
   create_table "goals", force: :cascade do |t|
-    t.integer  "team"
-    t.integer  "player"
-    t.integer  "assist1"
-    t.integer  "assist2"
+    t.integer  "game_id"
+    t.integer  "team_id"
+    t.integer  "player_id"
     t.integer  "period"
     t.time     "time"
     t.string   "situation"
-    t.integer  "goalie"
+    t.integer  "goalie_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -70,10 +81,10 @@ ActiveRecord::Schema.define(version: 20160806192125) do
   end
 
   create_table "penalties", force: :cascade do |t|
+    t.integer  "game_id"
     t.integer  "period"
     t.time     "time"
-    t.integer  "player"
-    t.integer  "sitter"
+    t.integer  "player_id"
     t.integer  "infraction"
     t.integer  "duration"
     t.string   "shorthanded"
@@ -82,6 +93,7 @@ ActiveRecord::Schema.define(version: 20160806192125) do
   end
 
   create_table "players", force: :cascade do |t|
+    t.integer  "team_id"
     t.string   "firstname"
     t.string   "lastname"
     t.string   "fullname"
@@ -102,4 +114,18 @@ ActiveRecord::Schema.define(version: 20160806192125) do
     t.datetime "updated_at",   null: false
   end
 
+  add_foreign_key "assists", "goals"
+  add_foreign_key "assists", "players"
+  add_foreign_key "games", "teams", column: "awayteam_id"
+  add_foreign_key "games", "teams", column: "hometeam_id"
+  add_foreign_key "games", "teams", column: "loser_id"
+  add_foreign_key "games", "teams", column: "winner_id"
+  add_foreign_key "goalies", "games"
+  add_foreign_key "goalies", "players"
+  add_foreign_key "goals", "games"
+  add_foreign_key "goals", "players"
+  add_foreign_key "goals", "teams"
+  add_foreign_key "penalties", "games"
+  add_foreign_key "penalties", "players"
+  add_foreign_key "players", "teams"
 end

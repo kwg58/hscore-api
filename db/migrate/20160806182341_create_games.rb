@@ -9,8 +9,8 @@ class CreateGames < ActiveRecord::Migration[5.0]
       t.string :official1
       t.string :official2
       t.string :official3
-      t.integer :hometeam
-      t.integer :awayteam
+      t.integer :hometeam_id
+      t.integer :awayteam_id
       t.integer :homescore1
       t.integer :homescore2
       t.integer :homescore3
@@ -21,10 +21,14 @@ class CreateGames < ActiveRecord::Migration[5.0]
       t.integer :awayscore3
       t.integer :awayscoreOT
       t.integer :awayscorefinal
-      t.integer :winner
-      t.integer :loser
+      t.integer :winner_id
+      t.integer :loser_id
       t.integer :tie
       t.timestamps
     end
+    add_foreign_key :games, :teams, column: :hometeam_id
+    add_foreign_key :games, :teams, column: :awayteam_id
+    add_foreign_key :games, :teams, column: :winner_id
+    add_foreign_key :games, :teams, column: :loser_id
   end
 end

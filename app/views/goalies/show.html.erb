@@ -1,24 +1,34 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Game:</strong>
+  <%= @goalie.game_id %>
+</p>
+
+<p>
+  <strong>Player:</strong>
+  <%= @goalie.player_id %>
+</p>
+
+<p>
   <strong>Time played:</strong>
-  <%= @goaly.time_played %>
+  <%= @goalie.time_played %>
 </p>
 
 <p>
   <strong>Goals against:</strong>
-  <%= @goaly.goals_against %>
+  <%= @goalie.goals_against %>
 </p>
 
 <p>
-  <strong>References:</strong>
-  <%= @goaly.references %>
+  <strong>Win:</strong>
+  <%= @goalie.win %>
 </p>
 
 <p>
-  <strong>References:</strong>
-  <%= @goaly.references %>
+  <strong>Loss:</strong>
+  <%= @goalie.loss %>
 </p>
 
-<%= link_to 'Edit', edit_goaly_path(@goaly) %> |
+<%= link_to 'Edit', edit_goalie_path(@goalie) %> |
 <%= link_to 'Back', goalies_path %>
