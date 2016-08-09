@@ -6,6 +6,8 @@ class Game < ApplicationRecord
   has_many :goalies
   # accepts_nested_attributes_for :teams, :goals, :assists, :pentalties, :goalies
 
+    # default_scope order('id DESC')
+
   def homefull()
     if self.hometeam_id.blank?
       return nil

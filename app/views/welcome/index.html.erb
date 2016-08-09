@@ -1,2 +1,16 @@
 <h1>Welcome#index</h1>
 <p>Find me in app/views/welcome/index.html.erb</p>
+
+<h2>Goal Form</h2>
+
+<% game_id = 20 %>
+<% team_id = 1 %>
+<%= form_for @goal do |f| %>
+<% f.hidden_field :game_id, :value => game_id %> <br />
+<% f.hidden_field :team_id, :value => team_id %> <br />
+<%= f.select :player_id, home_Select, {}, prompt: 'Goal Scorer:' %><br />
+Period : <%= f.text_field :period %><br />
+Time : <%= f.text_field :time, :required => true, :pattern => '[01]?[0-9]?[01]?[0-9]'  %><br />
+<%= f.select :situation, situation_Select, {}, prompt: 'Situation:' %><br />
+<%= f.submit %>
+<% end %>

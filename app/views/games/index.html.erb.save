@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Games</h1>
+<% @gamex = Game.order("id")  %>
+<table>
+  <thead>
+    <tr>
+      <th>Game</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Location</th>
+      <th>Status</th>
+      <th>Home</th>
+      <th>Score</th>
+      <th>Away</th>
+      <th>Score</th>
+      <th colspan="9"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gamex.each do |game| %>
+    <tr>
+      <td><%= game.id %></td>
+      <td><%= game.date %></td>
+      <td><%= game.time%></td>
+      <td><%= game.location %></td>
+      <td><%= game.status %></td>
+      <td><%= game.homeshort %></td>
+      <td><%= game.homescorefinal %></td>
+      <td><%= game.awayshort %></td>
+      <td><%= game.awayscorefinal %></td>
+      <td><%= link_to 'Show', game %></td>
+      <td><%= link_to 'Edit', edit_game_path(game) %></td>
+      <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Game', new_game_path %>
