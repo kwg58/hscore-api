@@ -7,23 +7,39 @@ class Game < ApplicationRecord
   # accepts_nested_attributes_for :teams, :goals, :assists, :pentalties, :goalies
 
   def homefull()
-    homef = Team.find(self.hometeam_id)
-    return homef.fullname
+    if self.hometeam_id.blank?
+      return nil
+    else
+      homef = Team.find(self.hometeam_id)
+      return homef.fullname
+    end
   end
 
   def homeshort()
-    homes = Team.find(self.hometeam_id)
-    return homes.shortname
+    if self.hometeam_id.blank?
+      return nil
+    else
+      homes = Team.find(self.hometeam_id)
+      return homes.shortname
+    end
   end
 
   def awayfull()
-    awayf = Team.find(self.awayteam_id)
-    return awayf.fullname
+    if self.awayteam_id.blank?
+      return nil
+    else
+      awayf = Team.find(self.awayteam_id)
+      return awayf.fullname
+    end
   end
 
   def awayshort()
-    aways = Team.find(self.awayteam_id)
-    return aways.shortname
+    if self.awayteam_id.blank?
+      return nil
+    else
+      aways = Team.find(self.awayteam_id)
+      return aways.shortname
+    end
   end
 
 end

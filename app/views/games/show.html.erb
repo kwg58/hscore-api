@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Game:</strong>
+  <%= @game.id %>
+</p>
+
+<p>
   <strong>Date:</strong>
   <%= @game.date %>
 </p>
@@ -23,6 +28,16 @@
 <p>
   <strong>Periodlength:</strong>
   <%= @game.periodlength %>
+</p>
+
+<p>
+  <strong>Home Team</strong>
+  <%= @game.homefull %>
+</p>
+
+<p>
+  <strong>Away Team</strong>
+  <%= @game.awayfull %>
 </p>
 
 <p>

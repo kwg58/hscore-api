@@ -67,3 +67,24 @@ CSV.foreach('db/players.csv', headers: true) do |row|
     }
   )
 end
+
+Game.delete_all
+
+CSV.foreach('db/games.csv', headers: true) do |row|
+
+Game.create(
+    {
+      # date: DateTime.new(row['Year'], row['Month'], row['Day']),
+      time: row['Time'],
+      location: row['Location'],
+      status: row['Status'],
+      periodlength: 15,
+      hometeam_id: row['Home'],
+      awayteam_id: row['Away'],
+      homescorefinal: row['HomeScore'],
+      awayscorefinal: row['AwayScore'],
+      winner_id: row['Winner'],
+      loser_id: row['Loser']
+    }
+  )
+end

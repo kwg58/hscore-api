@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+root 'welcome#index'
+
+  get 'welcome/index'
+
+  # root 'games#index'
   # resources :assists
   # resources :infractions
   resources :goalies
