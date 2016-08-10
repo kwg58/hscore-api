@@ -14,7 +14,8 @@ class GoalsController < ApplicationController
 
   # GET /goals/new
   def new
-    @goal = Goal.new
+    @goal = Goal.new    
+    @game = Game.find(params[:id])
   end
 
   # GET /goals/1/edit
@@ -24,6 +25,7 @@ class GoalsController < ApplicationController
   # POST /goals
   # POST /goals.json
   def create
+    binding.pry
     @goal = Goal.new(goal_params)
 
     respond_to do |format|

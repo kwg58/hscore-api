@@ -2,27 +2,32 @@
 
 <h1>Games</h1>
 
-<%= @games.each do |game| %>
-<div class="gamebox">
-  <div class="gameboxHeader">
-    <%= game.date %>&#8196;<%= game.time %>
-  </div>
-  <table>
-    <tr>
-      <td class="gbTeam"><%= game.awayshort %></td>
-      <td align="right" class="gbTeam"><%= game.awayscorefinal %></td>
-    </tr>
-    <tr>
-      <td class="gbTeam"><%= game.homeshort %></td>
-      <td align="right" class="gbTeam"><%= game.homescorefinal %></td>
-    </table>
-    <div class="gbFooter">
-      <div class="gbFootItem">
-        <%= game.status%></p>
-      </div>
-      <div class="gbFootItem">
-        <%= link_to 'Show', game %>
+<li><a href="#">Something1</a></li>
+
+<ul class="ribbon">
+  <%= @games.each do |game| %>
+  <li>
+    <a href="#"><div class="gamebox">
+    <div class="gameboxHeader">
+      <%= game.date %>&#8196;<%= game.time %>
+    </div>
+    <table>
+      <tr>
+        <td class="gbTeam"><%= game.awayshort %></td>
+        <td align="right" class="gbTeam"><%= game.awayscorefinal %></td>
+      </tr>
+      <tr>
+        <td class="gbTeam"><%= game.homeshort %></td>
+        <td align="right" class="gbTeam"><%= game.homescorefinal %></td>
+      </table>
+      <div class="gbFooter">
+        <div class="gbFootItem">
+          <%= game.status%></p>
+        </div>
+
       </div>
     </div>
-  </div>
-  <% end %>
+  </a>
+</li>
+
+<% end %>

@@ -1,0 +1,1 @@
+Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ds1UxVQ2gu/K9ipj3GTDyDsw4dwNU66yu382heAWSpS8gE6mP9f2SXrPFJ7CErukRzB5BB2hoUo0awSJ3b7jBg==", "goal"=>{"game_id"=>"3", "player_id"=>"13", "team_id"=>"1", "goalie_id"=>"", "period"=>"3", "time"=>"234", "situation"=>"Even Strength"}, "commit"=>"Create Goal"}

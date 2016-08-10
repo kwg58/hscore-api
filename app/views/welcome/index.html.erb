@@ -5,7 +5,8 @@
 
 <% game_id = 20 %>
 <% team_id = 1 %>
-<%= form_for @goal do |f| %>
+<ul>
+<%= form_for([@goal, @game]) do |f| %>
 <% f.hidden_field :game_id, :value => game_id %> <br />
 <% f.hidden_field :team_id, :value => team_id %> <br />
 <%= f.select :player_id, home_Select, {}, prompt: 'Goal Scorer:' %><br />

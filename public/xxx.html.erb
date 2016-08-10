@@ -1,0 +1,53 @@
+#comment.html.erb
+<div id="comments" >
+    <% if @comments.present?
+        @comments.each do |comment| %>
+            <div style="float:left">
+                <%= comment.user_name %>
+            </div>
+            <div>
+                <%= comment.message %>
+            </div>
+        <% end %>
+    <% end %>
+</div>
+<div id="add-comment">
+    <%= form_tag(add_comment_url, method: :post, remote: true, :id => "add_comment_form") do %>
+    <div>
+        <%= text_area_tag 'message', "",:maxlength => "130",:id => "user_comment", :placeholder => "" %>
+        <%= hidden_field_tag 'blog_id', blog.id %>
+        <div id="comment-errors">
+        </div>
+        <input type="submit" value="Post">
+    </div>
+    <% end %>
+</div>
+#javascript code for ajax
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#add_comment_form").on("ajax:success",function(e, data, status, xhr){
+        try{
+            var respone = JSON.parse(xhr.responseText);
+            $("#comments").append(respone.html);
+        } catch(e) {
+            console.log(e);
+        }
+    });
+});
+</script>
+#Controller that handles the request
+def add_comment
+    @blog = Blog.where(id: params[:blog_id]).first
+    comment = @blog.comments.create(message: params[:message], user_name: current_user.name, blog_id: params[:blog_id])
+    html = render_to_string :partial => '/blog/comment_info', :locals => {:comment => comment}
+    respond_to do |format|
+      format.json { render :json => {:success => true, :html => html} }
+    end
+end
+#partial comment_info has been written as:
+<div style="float:left">
+    <%= user.user_name %>
+</div>
+<div>
+    <%= comment.message %>
+</div>
