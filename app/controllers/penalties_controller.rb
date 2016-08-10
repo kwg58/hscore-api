@@ -14,7 +14,8 @@ class PenaltiesController < ApplicationController
 
   # GET /penalties/new
   def new
-    @penalty = Penalty.new
+    @game = Game.find(params[:game_id])
+    @penalty = @game.penalties.new
   end
 
   # GET /penalties/1/edit
@@ -24,7 +25,8 @@ class PenaltiesController < ApplicationController
   # POST /penalties
   # POST /penalties.json
   def create
-    @penalty = Penalty.new(penalty_params)
+    @game = Game.find(params[:game_id])
+    @penalty = @game.penalties.new(penalty_params)
 
     respond_to do |format|
       if @penalty.save

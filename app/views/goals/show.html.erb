@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<%=  @goal.inspect %>
 <p>
   <strong>Game:</strong>
   <%= @goal.game_id %>
@@ -35,5 +35,5 @@
   <%= @goal.situation %>
 </p>
 
-<%= link_to 'Edit', edit_goal_path(@goal) %> |
+
 <%= link_to 'Back', goals_path %>

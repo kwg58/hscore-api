@@ -1,5 +1,6 @@
 class Player < ApplicationRecord
   belongs_to :team
+  attr_accessor :id, :team_id, :firstname, :lastname, :fullname, :jerseynumber
 
 
   def homeSelect

@@ -7,9 +7,12 @@ root 'welcome#index'
   # resources :assists
   # resources :infractions
   resources :goalies
-  resources :penalties
-  resources :goals
-  resources :games
+  # resources :penalties
+  # resources :goals
+  resources :games do
+    resources :goals
+    resources :penalties
+  end
   resources :players
   resources :teams do
     resources :players

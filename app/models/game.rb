@@ -4,6 +4,7 @@ class Game < ApplicationRecord
   has_many :assists, through: :goals
   has_many :penalties
   has_many :goalies
+  attr_accessor :id, :date, :time, :status, :homescorefinal, :awayscorefinal
   # accepts_nested_attributes_for :teams, :goals, :assists, :pentalties, :goalies
 
     # default_scope order('id DESC')

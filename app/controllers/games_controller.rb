@@ -2,6 +2,10 @@ class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
   attr_reader :id
 
+  def find
+  @game = Game.new
+end
+
   # GET /games
   # GET /games.json
   def index
